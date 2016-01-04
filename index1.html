@@ -1,0 +1,25 @@
+<!DOCTYPE html >
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>demo</title>
+<script type="text/javascript" src="pinyin.js"></script>
+<script type="text/javascript">
+function getPinYin()
+{
+    var name = document.getElementById("txtName").value;
+    if(txtName==""){
+        document.getElementById("txtCharsName").value="";
+        document.getElementById("txtFullName").value="";
+    }else{
+        document.getElementById("txtCharsName").value=pinyin.getCamelChars(name);
+        document.getElementById("txtFullName").value=pinyin.getFullChars(name);
+    }
+}
+</script>
+</head>
+<body>
+请输入您的名字：<input type="text" onblur="getPinYin()" id="txtName" /><br />
+名字简拼：<input type="text" id="txtCharsName" disabled="disabled" /><br />
+名字全拼：<input type="text" id="txtFullName" disabled="disabled" /><br />
+</body>
+</html>
